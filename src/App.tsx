@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { useFecth } from './Hooks/useFetch'
 
 type Repositories = {
   full_name: string;
@@ -7,21 +6,16 @@ type Repositories = {
 }
 
 function App() {
-
-  const [repositories, setRepositories] = useState<Repositories[]>([])
-
-  useEffect(() => {
-    axios.get('https://api.github.com/users/feliper-silva/repos').then(response => {
-      setRepositories(response.data)
-    })
-  }, [])
+  const { data: repositories, isfetching, error } = useFecth<Repositories[]>('/users/feliper-silva/repos')
   return (
     <ul>
-      {repositories.map(repos => {
+      {error}
+      {isfetching && <p>Carregando...</p>}
+      {repositories?.map(repo => {
         return (
-          <li key={repos.full_name}>
-            <strong>{repos.full_name}</strong>
-            <p>{repos.description}</p>
+          <li key={repo.full_name}>
+            <strong>{repo.full_name}</strong>
+            <p>{repo.description}</p>
           </li>
         )
       })}
