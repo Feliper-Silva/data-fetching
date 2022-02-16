@@ -16,7 +16,7 @@ clone o projeto é entre na pasta do mesmo:
 
 ```bash
 $ git clone https://github.com/Feliper-silva/data-fetching
-$ cd letmeask
+$ cd data-fetching
 ```
 
 Para iniciá-lo, siga os passos abaixo:
