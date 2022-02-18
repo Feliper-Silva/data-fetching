@@ -9,6 +9,7 @@ usando a lib para consumir a Api do Github.
 - [ReactJs](https://reactjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [React Query](https://react-query.tanstack.com/)
+- [Api Github](https://api.github.com/)
 
 ### 🚀 Como executar:
 
